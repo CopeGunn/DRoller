@@ -16,43 +16,53 @@ public class Menu {
             "$3 = Throw a D12\n" +
             "$4 = Throw a D20\n" +
             "$5 = Throw a D100\n" +
-            "exit = Stop the program.\n"
+            "$F = Flip a coin\n" +
+            "#exit = Stop the program.\n"
             );
-        System.out.print("Option ");
+        System.out.print("Option: ");
+
         //Mientras que cont sea true
             while (cont) {
-        //Seleccionar caso (option)
-        System.out.print("$ "); 
-        String option = scanner.nextLine();
 
-        // Casos (options)
+        //Puntero seleccionador de opción (case)
+        System.out.print("\n$ "); 
+        String option = scanner.nextLine().toUpperCase();
+
+        //Opciónes (switch cases)
             switch (option) {
-            case "1": 
-                System.out.print("D6: "); 
-                diceThrow(6); //6 Caras
+
+            case "1":
+                System.out.print("D6: " + diceThrow(6));//6 Caras
                 cont = true;
                 break;
+
             case "2":
-                System.out.print("D8: ");
-                diceThrow(8); //8 Caras
+                System.out.print("D8: " + diceThrow(8)); //8 Caras
                 cont = true;
                 break;
 
             case "3":
-                System.out.print("D12: ");
-                diceThrow(12); //12 Caras
+                System.out.print("D12: " + diceThrow(12));//12 Caras
                 cont = true;
                 break;
 
              case "4":
-                 System.out.print("D20: ");
-                diceThrow(20); //20 Caras
+                System.out.print("D20: " + diceThrow(20));//20 Caras
                 cont = true;
                 break;
 
             case "5":
-                System.out.print("D100: ");
-                diceThrow(100); //100 Caras
+                System.out.print("D100: " + diceThrow(100));//100 Caras
+                cont = true;
+                break;
+
+             case "F":
+                System.out.print("Coin: ");
+                if (diceThrow(2) == 1){
+                    System.out.print("Heads");
+                }
+                else
+                    System.out.print("Tails");
                 cont = true;
                 break;
 
@@ -61,7 +71,7 @@ public class Menu {
                 cont = true;
                 break;
 
-            case "exit":
+            case "EXIT":
                 System.out.println("Thanks for using my shitty software c:");
                 cont = false;
                 break;
@@ -74,12 +84,13 @@ public class Menu {
         scanner.close();
     }
 
-        public static void diceThrow(int sides){
+        public static int diceThrow(int sides){
             Random random = new Random();
             //Valor de 'answ' igual a random limitado por 'sides'
-            int answ = random.nextInt(sides);
+            int answ = random.nextInt(sides) + 1;
             //Imprimir answ + 1 (para descartar el 0)
-            System.out.println(answ + 1);
+            //System.out.println(answ + 1);
+            return answ;
     }
         public static void easterEgg(){
             Random random = new Random();
