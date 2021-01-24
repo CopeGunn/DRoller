@@ -33,27 +33,22 @@ public class Menu {
 
             case "1":
                 System.out.print("D6: " + diceThrow(6));//6 Caras
-                cont = true;
                 break;
 
             case "2":
                 System.out.print("D8: " + diceThrow(8)); //8 Caras
-                cont = true;
                 break;
 
             case "3":
                 System.out.print("D12: " + diceThrow(12));//12 Caras
-                cont = true;
                 break;
 
              case "4":
                 System.out.print("D20: " + diceThrow(20));//20 Caras
-                cont = true;
                 break;
 
             case "5":
                 System.out.print("D100: " + diceThrow(100));//100 Caras
-                cont = true;
                 break;
 
              case "F":
@@ -63,12 +58,10 @@ public class Menu {
                 }
                 else
                     System.out.print("Tails");
-                cont = true;
                 break;
 
             case "420":
                 easterEgg();
-                cont = true;
                 break;
 
             case "EXIT":
@@ -98,12 +91,7 @@ public class Menu {
             switch (randEgg) {
 
             case 0:
-                System.out.println(
-                        "Congratulations! you have found my Easter Egg!\n" +
-                        "Behind the angelical mother hids the root of all goods and evils\n" +
-                        "And when you reach for it, don't you dare to disrespect not a single one\n" +
-                        "of your masters, as they are the five truest most faithful sources of\n" +
-                        "knowledge of the self and beyond, don't be wise, be truth, no for they, but for thee\n");
+                System.out.println("henlo?");
                 break;
 
             case 1:
