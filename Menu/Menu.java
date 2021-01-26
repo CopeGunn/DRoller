@@ -87,7 +87,7 @@ public class Menu {
     }
         public static void easterEgg(){
             Random random = new Random();
-            int randEgg = random.nextInt(2);
+            int randEgg = random.nextInt(4);
             switch (randEgg) {
 
             case 0:
@@ -96,6 +96,14 @@ public class Menu {
 
             case 1:
                 System.out.println("Nothing to see here cawbwoah!");
+                break;
+
+            case 2:
+                System.out.println("Siempre estoy dado vuelta");
+                break;
+
+            case 3:
+                System.out.println("");
                 break;
 
             }
