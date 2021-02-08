@@ -7,7 +7,7 @@ public class Menu {
         //Declaraciones iniciales
         Scanner scanner = new Scanner(System.in);
         boolean cont = true;
-
+        boolean gui = false;
          //Imprimir opciones
         System.out.println(
             "#Dice Roller Sassafras#\n" +
@@ -23,13 +23,14 @@ public class Menu {
 
         //Mientras que cont sea true
             while (cont) {
+                
 
         //Puntero seleccionador de opción (case)
         System.out.print("\n$ "); 
         String option = scanner.nextLine().toUpperCase();
-
+        
         //Opciónes (switch cases)
-            switch (option) {
+        switch (option) {
 
             case "1":
                 System.out.print("D6: " + diceThrow(6));//6 Caras
@@ -63,17 +64,20 @@ public class Menu {
             case "420":
                 easterEgg();
                 break;
-
+            case "GUI":
+                guid();
+                break;
             case "EXIT":
+            case "X":
+            case "QUIT":
                 System.out.println("Thanks for using my shitty software c:");
                 cont = false;
                 break;
 
             default:
-                System.out.println("Well, fuck you too m8!");
+                System.out.println("Try again");
             }
-            
-        } 
+        }
         scanner.close();
     }
 
@@ -84,6 +88,7 @@ public class Menu {
             //Imprimir answ + 1 (para descartar el 0)
             //System.out.println(answ + 1);
             return answ;
+
     }
         public static void easterEgg(){
             Random random = new Random();
@@ -107,8 +112,46 @@ public class Menu {
                 break;
 
             }
-            
-
-
     }
+        public static void guid(){
+            Random random = new Random();
+            int ascii = random.nextInt(4);
+            switch (ascii) {
+                case 0:
+                    System.out.println(
+" ____  ____  _     _       _  _____  _ \n"+
+"/  __\\/  _ \\/ \\   / \\     / \\/__ __\\/ \\\n"+
+"|  \\/|| / \\|| |   | |     | |  / \\  | |\n"+
+"|    /| \\_/|| |_/\\| |_/\\  | |  | |  \\_/\n"+
+"\\_/\\_\\\\____/\\____/\\____/  \\_/  \\_/  (_)\n");
+                                       
+                    break;
+                case 1:
+                    System.out.println(
+" /$$$$$$$            /$$ /$$       /$$   /$$    /$$\n"+
+"| $$__  $$          | $$| $$      |__/  | $$   | $$\n"+
+"| $$  \\ $$  /$$$$$$ | $$| $$       /$$ /$$$$$$ | $$\n"+
+"| $$$$$$$/ /$$__  $$| $$| $$      | $$|_  $$_/ | $$\n"+
+"| $$__  $$| $$  \\ $$| $$| $$      | $$  | $$   |__/\n"+
+"| $$  \\ $$| $$  | $$| $$| $$      | $$  | $$ /$$   \n"+
+"| $$  | $$|  $$$$$$/| $$| $$      | $$  |  $$$$//$$\n"+
+"|__/  |__/ \\______/ |__/|__/      |__/   \\___/ |__/\n"
+                        );
+                    break;
+                case 2:
+                    System.out.println(
+"    ____        ____   _ __  __\n"+
+"   / __ \\____  / / /  (_) /_/ /\n"+
+"  / /_/ / __ \\/ / /  / / __/ / \n"+
+" / _, _/ /_/ / / /  / / /_/_/  \n"+
+"/_/ |_|\\____/_/_/  /_/\\__(_)   \n"
+                       );
+                    break;
+                case 3:
+                System.out.println(
+                    "01010010 01101111 01101100 01101100  01101001 01110100 00100001"
+                    );
+            }
+
+        }
 }
